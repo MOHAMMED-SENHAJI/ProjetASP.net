@@ -13,7 +13,16 @@ namespace ProjetASP.net.Controllers
         private DataBaseDataContext db = new DataBaseDataContext();
         public ActionResult Index()
         {
-            TempData["Connecter"] = "false";
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
+
             var listVoiture = (from v in db.Voitures
                                join p in db.Users on v.Proprietaire equals p.Id
                                where v.Offre == 1
@@ -23,11 +32,29 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Contact()
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             return View();
         }
         [HttpPost]
         public ActionResult Contact(string name, string em, string msg)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             Message message = new Message
             {
                 Nom = name,
@@ -40,6 +67,15 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult About()
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             return View();
         }
 

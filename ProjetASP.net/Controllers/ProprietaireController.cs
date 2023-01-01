@@ -15,7 +15,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Index()
         {
-            TempData["Connecter"] = "false";
+            TempData["Connecter"] = "true";
             return View();
         }
         public ActionResult ListProprietaire()
@@ -24,6 +24,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Proprietaire_Page(int? id)
         {
+            TempData["Connecter"] = "true";
             if (id != null)
             {
                 User prop = (from p in db.Users
@@ -41,6 +42,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Proprietaire_Info()
         {
+            TempData["Connecter"] = "true";
             var query = (from user in db.Users
                          where user.Id.Equals(Convert.ToInt32(Session["UserId"]))
                          select user).First();
@@ -49,6 +51,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Update_Proprietaire_Info(int Id, string name, string email, string adresse, string tele)
         {
+            TempData["Connecter"] = "true";
             User user = new User()
             {
                 Id = Id,
@@ -64,6 +67,7 @@ namespace ProjetASP.net.Controllers
         [HttpPost]
         public ActionResult Update_Proprietaire_Info(string nom, string tele, string email, string adresse)
         {
+            TempData["Connecter"] = "true";
             User u = (from user in db.Users
                       where user.Id.Equals(Convert.ToInt32(Session["UserId"]))
                       select user).First();
@@ -76,6 +80,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult reservation()
         {
+            TempData["Connecter"] = "true";
             var reservations = from r in db.Reservations
                                join voiture in db.Voitures on r.Voiture equals voiture.Id
                                where voiture.Proprietaire.Equals(Convert.ToInt32(Session["UserId"]))
@@ -87,6 +92,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Liste_Voiture()
         {
+            TempData["Connecter"] = "true";
             var query = (from v in db.Voitures
                          where v.Proprietaire.Equals(Convert.ToInt32(Session["UserId"]))//
                          select v).ToList();
@@ -95,12 +101,14 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Ajouter_voiture()
         {
+            TempData["Connecter"] = "true";
             return View();
         }
 
         [HttpPost]
         public ActionResult Ajouter_Voiture(string Name, string Imm, string Color, int kilom, int modele, string transition, int price, HttpPostedFileBase image, string offre, string marque)
         {
+            TempData["Connecter"] = "true";
             Voiture v = new Voiture()
             {
                 Proprietaire = Convert.ToInt32(Session["UserId"]),
@@ -132,6 +140,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Update_voiture(int VoitureId)
         {
+            TempData["Connecter"] = "true";
             var v = (from voiture in db.Voitures
                      where voiture.Id.Equals(VoitureId)
                      select voiture).First();
@@ -142,6 +151,7 @@ namespace ProjetASP.net.Controllers
         [HttpPost]
         public ActionResult Update_voiture(int id, string Name, string Imm, string Color, int kilom, int modele, string transition, int price, HttpPostedFileBase image, string offre, string marque)
         {
+            TempData["Connecter"] = "true";
             var voiture = (from v in db.Voitures
                            where v.Id.Equals(id)
                            select v).First();
@@ -163,6 +173,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Delete(int VoitureId)
         {
+            TempData["Connecter"] = "true";
             var RES = (from res in db.Reservations
                        where res.Voiture.Equals(VoitureId)
                        select res).ToList();
@@ -178,6 +189,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Valider(int resId)
         {
+            TempData["Connecter"] = "true";
             var r = (from res in db.Reservations
                      where res.Id.Equals(resId)
                      select res).First();
@@ -188,6 +200,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Supprimer(int resId)
         {
+            TempData["Connecter"] = "true";
             var r = (from res in db.Reservations
                      where res.Id.Equals(resId)
                      select res).First();

@@ -19,7 +19,7 @@ namespace ProjetASP.net.Resources.Home {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Index {
@@ -61,65 +61,47 @@ namespace ProjetASP.net.Resources.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A propos.
+        ///   Looks up a localized string similar to Créer Compte.
         /// </summary>
-        public static string AboutB {
+        public static string button {
             get {
-                return ResourceManager.GetString("AboutB", resourceCulture);
+                return ResourceManager.GetString("button", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contactez nous.
+        ///   Looks up a localized string similar to Choisissez la voiture qui convient à votre humeur.
         /// </summary>
-        public static string ContactB {
+        public static string header1 {
             get {
-                return ResourceManager.GetString("ContactB", resourceCulture);
+                return ResourceManager.GetString("header1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Offres spéciales.
         /// </summary>
-        public static string OffreSpec {
+        public static string offre {
             get {
-                return ResourceManager.GetString("OffreSpec", resourceCulture);
+                return ResourceManager.GetString("offre", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to un paragraphe en français.
+        ///   Looks up a localized string similar to Voulez-vous recevoir d’autres offres?.
         /// </summary>
-        public static string Paragraph {
+        public static string question1 {
             get {
-                return ResourceManager.GetString("Paragraph", resourceCulture);
+                return ResourceManager.GetString("question1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to un autre paragraophe en français.
+        ///   Looks up a localized string similar to Soyez le premier à recevoir toutes les informations sur nos nouvelles voitures en vous abonnant à notre liste de diffusion..
         /// </summary>
-        public static string Paragraph2 {
+        public static string text {
             get {
-                return ResourceManager.GetString("Paragraph2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to un titre en français.
-        /// </summary>
-        public static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to un autre titre en français.
-        /// </summary>
-        public static string Title2 {
-            get {
-                return ResourceManager.GetString("Title2", resourceCulture);
+                return ResourceManager.GetString("text", resourceCulture);
             }
         }
     }

@@ -19,7 +19,7 @@ namespace ProjetASP.net.Resources.Home {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class About {
@@ -61,6 +61,15 @@ namespace ProjetASP.net.Resources.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contactez-Nous.
+        /// </summary>
+        public static string contact {
+            get {
+                return ResourceManager.GetString("contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to le paragraphe a propos du site.
         /// </summary>
         public static string Paragraph {
@@ -70,11 +79,21 @@ namespace ProjetASP.net.Resources.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Qui sommes nous ?.
+        ///   Looks up a localized string similar to Que représentons-nous?.
         /// </summary>
         public static string Question {
             get {
                 return ResourceManager.GetString("Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next Car est une entreprise de location de voitures en ligne qui vous offre une large sélection de véhicules de tous types et tailles. Nous sommes déterminés à vous offrir le meilleur service possible et à rendre votre expérience de location de voiture aussi simple et agréable que possible.
+        ///Notre système de gestion de location de voitures est facile à utiliser et vous permet de réserver et de gérer votre location de voiture en ligne, sans avoir à vous déplacer. Nous avons des tarifs compétitifs et des opti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string text {
+            get {
+                return ResourceManager.GetString("text", resourceCulture);
             }
         }
         

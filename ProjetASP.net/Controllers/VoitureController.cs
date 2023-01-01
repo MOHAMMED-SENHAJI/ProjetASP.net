@@ -14,6 +14,15 @@ namespace ProjetASP.net.Controllers
         [HttpGet]
         public ActionResult Index(int? VoitureId)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             if (VoitureId != null)
             {
                 Voiture_info voiture = (from v in db.Voitures
@@ -36,6 +45,15 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult ListVoiture(DateTime? dateDispo = null)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             var listVoiture = from v in db.Voitures
                               join p in db.Users on v.Proprietaire equals p.Id
                               select new Voiture_info { voiture = v, user = p };
@@ -55,6 +73,15 @@ namespace ProjetASP.net.Controllers
         [HttpPost]
         public ActionResult ListVoiture(string TextRecherche, string RecherchePar)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             try
             {
                 if (RecherchePar.Equals("Nom"))
@@ -122,6 +149,15 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Reserver(int id)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
 
             res(id);
 
@@ -131,6 +167,15 @@ namespace ProjetASP.net.Controllers
         [HttpPost]
         public ActionResult Reserver(string nom, string email, string phone, string addresse, string paiement, int jours, DateTime date, int voitureId = 4)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             //  DateTime date = DateTime.Now;
             int? UserId = (from u in db.Users
                            where u.Email.Equals(email)
@@ -161,6 +206,15 @@ namespace ProjetASP.net.Controllers
 
         void res(int id)
         {
+            if (Session["UserRole"] != null)
+            {
+                TempData["Connecter"] = "true";
+            }
+
+            else
+            {
+                TempData["Connecter"] = "false";
+            }
             int userid = Convert.ToInt32(Session["UserId"]);
 
             User user = db.Users.Where(r => r.Id == userid).FirstOrDefault();
@@ -176,7 +230,6 @@ namespace ProjetASP.net.Controllers
                 ViewBag.user = new User { Name = " ", Address = " ", Phone = " ", Email = " " };
             else
                 ViewBag.user = user;
-
 
 
         }
