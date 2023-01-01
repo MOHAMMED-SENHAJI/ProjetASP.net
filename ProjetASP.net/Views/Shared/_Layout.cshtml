@@ -67,14 +67,14 @@
             <!-- Overlay -->
             <div class="w3-overlay w3-animate-opacity" onclick="closeRightMenu()" style="cursor:pointer" id="myOverlay"></div>
             <!-- menu -->
-            <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-right" style="display:none;right:0 ; top: 0; width: 350px ;z-index:5" id="rightMenu">
+            <div class="w3-sidebar w3-bar-block connectSideBar w3-animate-right" style="display:none;right:0 ; top: 0; width: 350px ;z-index:5" id="rightMenu">
                 <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large"> &times;</button>
                 <br>
                 <h2 class="w3-bar-item">
                     @ProjetASP.net.Resources.Shared._Layout.rightMenu
                 </h2>
                 <br>
-                <div style=" margin-left : 2rem; background: red">
+                <div style=" font-size:19px;">
                     @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuLoc, "SignIn", "Login", new { role = "Locataire" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
                     @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuProp, "SignIn", "Login", new { role = "Proprietaire" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
                     @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuAdmin, "SignIn", "Login", new { role = "Administrateur" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
