@@ -13,19 +13,19 @@
 
             <div class="popular__data">
                 <div class="popular__data-group">
-                    <i class="ri-dashboard-2-line"></i> 3.7 sec
+                    <i class="ri-dashboard-2-line"></i> @Model.voiture.Couleur
                 </div>
                 <div class="popular__data-group">
-                    <i class="ri-exchange-funds-line"></i> 356 Km/h
+                    <i class="ri-exchange-funds-line"></i> @Model.voiture.Kilometrage km
                 </div>
                 <div class="popular__data-group">
-                    <i class="ri-charging-pile-2-line"></i> Electric
+                    <i class="ri-charging-pile-2-line"></i> @Model.voiture.Modele
                 </div>
             </div>
 
             <h3 class="popular__price">@Model.voiture.Prix dh</h3>
             <button class="button popular__button">
-                <a href="~/Voiture/Index?VoitureId=@Model.voiture.Id" class="btn ">Voir plus  <i class="ri-shopping-bag-2-line"></i></a>
+                <a href="~/Voiture/Index?VoitureId=@Model.voiture.Id" class="btn "><i class="ri-shopping-bag-2-line"></i></a>
             </button>
 
 

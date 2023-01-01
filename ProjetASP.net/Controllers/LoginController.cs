@@ -9,15 +9,16 @@ namespace ProjetASP.net.Controllers
     public class LoginController : Controller
     {
         private DataBaseDataContext db = new DataBaseDataContext();
-
         public ActionResult SignIn(string role)
         {
+            TempData["Connecter"] = "false";
             ViewBag.role = role;
             return View();
         }
         [HttpPost]
         public ActionResult SignIn(string email, string password, string role)
         {
+            TempData["Connecter"] = "false";
             password = System.Web.Helpers.Crypto.SHA1(password);
             var query = (from user in db.Users
                          where user.Email.Equals(email)
@@ -41,6 +42,8 @@ namespace ProjetASP.net.Controllers
                     return RedirectToAction("Index", "Admin");
                 }
                 else return Content("other role");
+
+
             }
             else
             {

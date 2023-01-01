@@ -27,7 +27,6 @@
 
 </head>
 <body>
-    <div class="cursor"></div>
     <header class="header">
         <div class="container">
             <nav class="nav container">
@@ -50,17 +49,32 @@
                         <li class="nav__item">
                             <a href="~/Home/About" class="nav__link "> @ProjetASP.net.Resources.Shared._Layout.About </a>
                         </li>
-                        <li class="nav__item">
-                            <a class="nav__link w3-left" style="cursor: pointer;" onclick="openRightMenu()">
-                                <span class="Nan-icon">
-                                    <i class="bi bi-box-arrow-in-left"> </i>
-                                </span>
 
-                                @ProjetASP.net.Resources.Shared._Layout.Connect
-                            </a>
-                        </li>
+                        @{
+                            var temp = @TempData["connecter"];
+                        }
+                        @if ((string)temp != "true")
+                        {
+                            <li class="nav__item">
+                                <a class="nav__link w3-left" style="cursor: pointer;" onclick="openRightMenu()">
+                                    <span class="Nan-icon">
+                                        <i class="bi bi-box-arrow-in-left"> </i>
+                                    </span>
 
-                    </ul>
+                                    @ProjetASP.net.Resources.Shared._Layout.Connect
+                                </a>
+                            </li>
+                        }
+                        @if ((string)temp != "false")
+                        {
+                            <li class="nav__item">
+                                <a href="~/Login/Logout" class="nav__link w3-left Nan-icon ">
+                                    <i class="bi bi-door-closed"></i>  @ProjetASP.net.Resources.Shared._Layout.Disconnect
+                                </a>
+                            </li>
+                        }
+
+                        </ul>
                 </div>
             </nav>
 
@@ -89,35 +103,6 @@
                          border: none;
                          margin: 5.5rem auto 1rem 4rem; !important; ">
 
-                        <div class="modal-body">
-                            <div class="Model-content-form">
-
-
-                                <form action="/Voiture/ListVoiture" method="post">
-                                    <div class="input-group">
-                                        <input name="TextRecherche" type="text" class="form-control form-search" aria-label="Text input with dropdown button">
-                                        <select name="RecherchePar" class="custom-select form-search">
-                                            <option value="0" selected>@ProjetASP.net.Resources.Shared._Layout.SearchBy : </option>
-                                            <option value="Nom">@ProjetASP.net.Resources.Shared._Layout.Name</option>
-                                            <option value="Marque">@ProjetASP.net.Resources.Shared._Layout.Marque</option>
-                                            <option value="Couleur">@ProjetASP.net.Resources.Shared._Layout.Color</option>
-                                            <option value="Annee">@ProjetASP.net.Resources.Shared._Layout.Year</option>
-                                            <option value="Km">@ProjetASP.net.Resources.Shared._Layout.KM</option>
-                                            <option value="Proprietaire">@ProjetASP.net.Resources.Shared._Layout.Prop    </option>
-                                        </select>
-                                        <div class="input-group-append">
-                                            <button class="btn form-search" type="submit">
-                                                <span class="Nan-icon">
-                                                    <i class="bi bi-search"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-
-                        </div>
 
                     </div>
                 </div>

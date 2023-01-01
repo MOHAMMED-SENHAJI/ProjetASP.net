@@ -15,6 +15,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Index()
         {
+            TempData["Connecter"] = "false";
 
             if (Session["UserId"] != null)
                 return RedirectToAction("UserInfo");

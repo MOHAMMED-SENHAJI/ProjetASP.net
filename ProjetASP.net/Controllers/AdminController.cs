@@ -23,6 +23,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Index()
         {
+            TempData["Connecter"] = "true";
             if (!checkAdmin())
                 return RedirectToAction("Index", "Home");
             int nbrAllUser = db.Users.Count();

@@ -15,6 +15,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Index()
         {
+            TempData["Connecter"] = "false";
             return View();
         }
         public ActionResult ListProprietaire()
@@ -119,10 +120,10 @@ namespace ProjetASP.net.Controllers
                 image.SaveAs(Server.MapPath("~") + "/Content/Images/Voiture/" + image.FileName);
             }
             catch (UnauthorizedAccessException)
-            { 
-            
+            {
+
             }
-                if (offre.Equals("true")) v.Offre = 1;
+            if (offre.Equals("true")) v.Offre = 1;
             else v.Offre = 0;
             db.Voitures.InsertOnSubmit(v);
             db.SubmitChanges();

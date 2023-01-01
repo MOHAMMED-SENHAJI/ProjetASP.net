@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Sign In";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -27,6 +26,7 @@
                             {
                                 <p>Vous n'avez pas de compte @ViewBag.role ? @Html.ActionLink("créer compte", "SignUp", "Login", new { role = ViewBag.role }, htmlAttributes: new { @class = "btn-link" })</p>
                             }
+                           
                         </form>
                     </div>
                 </div>

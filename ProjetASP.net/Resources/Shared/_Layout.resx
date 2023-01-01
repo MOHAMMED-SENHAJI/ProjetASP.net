@@ -129,6 +129,9 @@
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>se deconnecter</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>Anglais</value>
   </data>
