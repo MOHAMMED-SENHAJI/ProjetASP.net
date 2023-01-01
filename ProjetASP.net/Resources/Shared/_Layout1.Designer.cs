@@ -178,6 +178,15 @@ namespace ProjetASP.net.Resources.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Profil.
+        /// </summary>
+        public static string Profil {
+            get {
+                return ResourceManager.GetString("Profil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nom de propriétaire.
         /// </summary>
         public static string Prop {

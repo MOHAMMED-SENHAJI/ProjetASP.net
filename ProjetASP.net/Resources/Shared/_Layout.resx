@@ -156,6 +156,9 @@
   <data name="Name" xml:space="preserve">
     <value>Nom de voiture</value>
   </data>
+  <data name="Profil" xml:space="preserve">
+    <value>Profil</value>
+  </data>
   <data name="Prop" xml:space="preserve">
     <value>Nom de propriétaire</value>
   </data>

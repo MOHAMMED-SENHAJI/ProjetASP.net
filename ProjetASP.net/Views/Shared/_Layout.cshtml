@@ -53,6 +53,8 @@
 
                         @{
                             var temp = @TempData["connecter"];
+                            var act = "";
+                            var cont = "";
                         }
                         @if ((string)temp == "false")
                         {
@@ -73,9 +75,30 @@
                                     <i class="bi bi-door-closed"></i>  @ProjetASP.net.Resources.Shared._Layout.Disconnect
                                 </a>
                             </li>
+
+                            if ((string)Session["UserRole"] == "Administrateur")
+                            {
+                                act = "Index";
+                                cont = "Admin";
+                            }
+                            if ((string)Session["UserRole"] == "Proprietaire")
+                            {
+                                act = "Proprietaire_info";
+                                cont = "Proprietaire";
+                            }
+                            if ((string)Session["UserRole"] == "Locataire")
+                            {
+                                act = "UserInfo";
+                                cont = "User";
+                            }
+                            <li class="nav__item">
+                                <i class="bi bi-person-circle"></i>
+                                @Html.ActionLink(@ProjetASP.net.Resources.Shared._Layout.Profil, act, cont, new { area = "" }, new { @class = "nav__link" })
+                                
+                            </li>
                         }
 
-                        </ul>
+                    </ul>
                 </div>
             </nav>
 
