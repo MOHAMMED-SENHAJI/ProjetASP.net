@@ -19,6 +19,7 @@
 }
 
     .ListProprietaire .card-body .btn:hover {
+
         margin: auto 13%;
         font-weight: 700;
     }
@@ -169,8 +170,8 @@ label::after {
     .about .banner {
         height: 400px;
         width: 100%;
-        background: url('~/Style/Images/about.png') no-repeat bottom rgba(0, 0, 0, 0.5);
-        background-size: cover;
+        background: url('../../Style/Images/about.png') no-repeat bottom rgba(0, 0, 0, 0.5);
+        background-size: contain;
         background-blend-mode: multiply;
         background-attachment: fixed;
     }
@@ -199,8 +200,7 @@ label::after {
     .about .bg-img {
         height: 500px;
         width: 90%;
-        background: url('../Images/Global/undraw_searching_p5ux.png') no-repeat center;
-        background-size: contain;
+        background: url('../../Style/Images/logo_background.png') no-repeat center; background-size: contain;
     }
 
     .about .content {
@@ -228,7 +228,7 @@ label::after {
     .contact .banner {
         height: 400px;
         width: 100%;
-        background: url('../Images/Global/pexels-jéshoots-4831.jpg') no-repeat center rgba(0, 0, 0, 0.5);
+        background: url('../../Style/Images/contact4.jpg') no-repeat center rgba(0, 0, 0, 0.5);
         background-size: cover;
         background-blend-mode: multiply;
         background-attachment: fixed;
@@ -248,7 +248,7 @@ label::after {
     .contact .bg-img {
         height: 600px;
         width: 80%;
-        background: url('../Images/Global/undraw_Profile_data_re_v81r.png') no-repeat center;
+        background: url('../../Style/Images/contact4.jpg') no-repeat center;
         background-size: contain;
         border-radius: 2rem;
     }
@@ -259,19 +259,22 @@ label::after {
     }
 
         .contact .content h2 {
-            color: #922b21;
+            color: #23549c;
         }
 
         .contact .content form .form-control {
             margin: 2.5rem 0 auto;
             padding: 1.2rem 1.5rem;
             font-size: 1rem;
+            background: local;
+            color: white;
         }
 
 .content .btn {
     color: #ffffff;
     margin-top: 30px;
-    padding: 0.8rem 4rem
+    padding: 0.8rem 4rem;
+    background: #23549c !important
 }
 
     .content .btn:hover {

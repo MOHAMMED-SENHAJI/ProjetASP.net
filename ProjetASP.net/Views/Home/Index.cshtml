@@ -12,7 +12,7 @@
                 <div class="home__container container grid">
                     <div class="home__data">
                         <h1 class="home__title">
-                            Pick Your Best Car
+                            @ProjetASP.net.Resources.Home.Index.header1
                         </h1>
                         <h2 class="home__subtitle">
                             Ferrari 458
@@ -77,7 +77,7 @@
     <div class="s2 container">
         <div class="row justify-content-center">
             <div class="col-md-12 ">
-                <h2 class="section__title"> Offre Spéciales</h2>
+                <h2 class="section__title"> @ProjetASP.net.Resources.Home.Index.offre</h2>
 
             </div>
         </div>
@@ -110,16 +110,14 @@
 
         <div class="offer__data">
             <h2 class="section__title offer__title">
-                Do You Want To Receive More <br> Special Offers?
+                @ProjetASP.net.Resources.Home.Index.question1
             </h2>
 
             <p class="offer__description">
-                Be the first to receive all the information about our
-                products and new cars by email by subscribing to our
-                mailing list.
+                @ProjetASP.net.Resources.Home.Index.text
             </p>
            
-            <div class="button">@Html.ActionLink("créer compte", "SignUp", "Login", new { role = "Locataire" }, htmlAttributes: new { @class = "btn" })</div>
+            <div class="button">@Html.ActionLink(@ProjetASP.net.Resources.Home.Index.button, "SignUp", "Login", new { role = "Locataire" }, htmlAttributes: new { @class = "btn" })</div>
         </div>
 
         <img src="~/Style/Images/offer.png" alt="" class="offer__img">

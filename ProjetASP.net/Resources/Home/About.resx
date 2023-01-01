@@ -117,11 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="contact" xml:space="preserve">
+    <value>Contactez-Nous</value>
+  </data>
   <data name="Paragraph" xml:space="preserve">
     <value>le paragraphe a propos du site</value>
   </data>
   <data name="Question" xml:space="preserve">
-    <value>Qui sommes nous ?</value>
+    <value>Que représentons-nous?</value>
+  </data>
+  <data name="text" xml:space="preserve">
+    <value>Next Car est une entreprise de location de voitures en ligne qui vous offre une large sélection de véhicules de tous types et tailles. Nous sommes déterminés à vous offrir le meilleur service possible et à rendre votre expérience de location de voiture aussi simple et agréable que possible.
+Notre système de gestion de location de voitures est facile à utiliser et vous permet de réserver et de gérer votre location de voiture en ligne, sans avoir à vous déplacer. Nous avons des tarifs compétitifs et des options de paiement flexibles pour répondre à tous vos besoins.
+Nous sommes impatients de vous aider à planifier votre prochain voyage en voiture et de vous offrir une expérience de location de voiture sans tracas. Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter. Nous sommes là pour vous aider.</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>A propos</value>
