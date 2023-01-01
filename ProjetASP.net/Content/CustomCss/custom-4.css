@@ -36,24 +36,31 @@
 
 /*******************************/
 .menu {
-    background-color: #922b21;
+    background: rgb(78,20,99) !important;
+    background: linear-gradient(180deg, rgba(78,20,99,1) 0%, rgba(25,2,34,1) 100%) !important;
     min-height: 90vh;
     color: #fff;
     padding: 0;
+    
 }
 
     .menu h2 {
         margin: 0;
         padding: 3rem 1rem 4rem 2rem;
-        background-color: #641e16;
+        background-color: transparent;
         font-size: 2.5rem;
         font-weight: 300;
     }
 
+
+
+
         .menu h2 small {
-            font-size: 1rem;
+            font-size: 1.3rem;
             font-weight: 300;
         }
+
+
 
     .menu .menu-link {
         font-size: 1rem;
@@ -65,10 +72,12 @@
         position: absolute;
     }
 
+
+
         .menu .menu-link .btn {
             display: inline-block;
             color: #fff;
-            background-color: #7b241c;
+            background-color: transparent;
             font-size: 1rem;
             font-weight: 300;
             border-radius: 0;
@@ -354,3 +363,8 @@ label::after {
                 .ListVoiture .banner .content form .btn:hover {
                     background: #641e16;
                 }
+
+
+.table-responsive td{
+    color:white !important;
+}
