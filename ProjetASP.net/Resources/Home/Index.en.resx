@@ -117,25 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutB" xml:space="preserve">
-    <value>About</value>
+  <data name="button" xml:space="preserve">
+    <value>Create Account</value>
   </data>
-  <data name="ContactB" xml:space="preserve">
-    <value>Contact us</value>
+  <data name="header1" xml:space="preserve">
+    <value>Pick the Car that suits your mood</value>
   </data>
-  <data name="OffreSpec" xml:space="preserve">
-    <value>Special offers</value>
+  <data name="offre" xml:space="preserve">
+    <value>Special Offers</value>
   </data>
-  <data name="Paragraph" xml:space="preserve">
-    <value>eng paraph</value>
+  <data name="question1" xml:space="preserve">
+    <value>Do you want to receive more offers?</value>
   </data>
-  <data name="Paragraph2" xml:space="preserve">
-    <value>eng paragraph 2</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>title</value>
-  </data>
-  <data name="Title2" xml:space="preserve">
-    <value>title2</value>
+  <data name="text" xml:space="preserve">
+    <value>Be the first to receive all the information about our new cars by subscribing to our mailing list.</value>
   </data>
 </root>

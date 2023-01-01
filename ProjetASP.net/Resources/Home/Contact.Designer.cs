@@ -19,7 +19,7 @@ namespace ProjetASP.net.Resources.Home {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Contact {
@@ -57,60 +57,6 @@ namespace ProjetASP.net.Resources.Home {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Votre adresse email.
-        /// </summary>
-        public static string emailHolder {
-            get {
-                return ResourceManager.GetString("emailHolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to écrire un message.
-        /// </summary>
-        public static string messageHolder {
-            get {
-                return ResourceManager.GetString("messageHolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Votre nom.
-        /// </summary>
-        public static string nameHolder {
-            get {
-                return ResourceManager.GetString("nameHolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to On est là pour vous.
-        /// </summary>
-        public static string statement {
-            get {
-                return ResourceManager.GetString("statement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Envoyer.
-        /// </summary>
-        public static string submitB {
-            get {
-                return ResourceManager.GetString("submitB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contactez nous.
-        /// </summary>
-        public static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }
