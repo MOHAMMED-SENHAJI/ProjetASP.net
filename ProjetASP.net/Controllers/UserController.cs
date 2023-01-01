@@ -15,6 +15,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Index()
         {
+            TempData["Connecter"] = "true";
 
             if (Session["UserId"] != null)
                 return RedirectToAction("UserInfo");
@@ -25,12 +26,14 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult UserInfo()
         {
+            TempData["Connecter"] = "true";
 
             return View(getUser());
         }
         [HttpPost]
         public ActionResult UpdateUserInfo(string nom, string email, string telephone)
         {
+            TempData["Connecter"] = "true";
             User user = getUser();
             user.Name = nom;
             user.Email = email;
@@ -40,6 +43,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Historique()
         {
+            TempData["Connecter"] = "true";
             User user = getUser();
 
             var histo_info = from c in db.Reservations
@@ -55,6 +59,7 @@ namespace ProjetASP.net.Controllers
 
         private User getUser()
         {
+            TempData["Connecter"] = "true";
             User user = (from u in db.Users
                          where u.Id == Convert.ToInt32(Session["UserId"])
                          select u).FirstOrDefault();
@@ -63,6 +68,7 @@ namespace ProjetASP.net.Controllers
 
         private Voiture getVoiture(int id)
         {
+            TempData["Connecter"] = "true";
             Voiture user = (from u in db.Voitures
                             where u.Id == id
                             select u).FirstOrDefault();
@@ -70,6 +76,7 @@ namespace ProjetASP.net.Controllers
         }
         private User getProp(int id)
         {
+            TempData["Connecter"] = "true";
             User user = (from u in db.Users
                          where u.Id == id
                          select u).FirstOrDefault();

@@ -50,31 +50,46 @@
                         <li class="nav__item">
                             <a href="~/Home/About" class="nav__link "> @ProjetASP.net.Resources.Shared._Layout.About </a>
                         </li>
-                        <li class="nav__item">
-                            <a class="nav__link w3-left" style="cursor: pointer;" onclick="openRightMenu()">
-                                <span class="Nan-icon">
-                                    <i class="bi bi-box-arrow-in-left"> </i>
-                                </span>
 
-                                @ProjetASP.net.Resources.Shared._Layout.Connect
-                            </a>
-                        </li>
+                        @{
+                            var temp = @TempData["connecter"];
+                        }
+                        @if ((string)temp == "false")
+                        {
+                            <li class="nav__item">
+                                <a class="nav__link w3-left" style="cursor: pointer;" onclick="openRightMenu()">
+                                    <span class="Nan-icon">
+                                        <i class="bi bi-box-arrow-in-left"> </i>
+                                    </span>
 
-                    </ul>
+                                    @ProjetASP.net.Resources.Shared._Layout.Connect
+                                </a>
+                            </li>
+                        }
+                        @if ((string)temp == "true")
+                        {
+                            <li class="nav__item">
+                                <a href="~/Login/Logout" class="nav__link w3-left Nan-icon ">
+                                    <i class="bi bi-door-closed"></i>  @ProjetASP.net.Resources.Shared._Layout.Disconnect
+                                </a>
+                            </li>
+                        }
+
+                        </ul>
                 </div>
             </nav>
 
             <!-- Overlay -->
             <div class="w3-overlay w3-animate-opacity" onclick="closeRightMenu()" style="cursor:pointer" id="myOverlay"></div>
             <!-- menu -->
-            <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-right" style="display:none;right:0 ; top: 0; width: 350px ;z-index:5" id="rightMenu">
+            <div class="w3-sidebar w3-bar-block connectSideBar w3-animate-right" style="display:none;right:0 ; top: 0; width: 350px ;z-index:5" id="rightMenu">
                 <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large"> &times;</button>
                 <br>
                 <h2 class="w3-bar-item">
                     @ProjetASP.net.Resources.Shared._Layout.rightMenu
                 </h2>
                 <br>
-                <div style=" margin-left : 2rem; background: red">
+                <div style=" font-size:19px;">
                     @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuLoc, "SignIn", "Login", new { role = "Locataire" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
                     @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuProp, "SignIn", "Login", new { role = "Proprietaire" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
                     @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuAdmin, "SignIn", "Login", new { role = "Administrateur" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
@@ -89,35 +104,6 @@
                          border: none;
                          margin: 5.5rem auto 1rem 4rem; !important; ">
 
-                        <div class="modal-body">
-                            <div class="Model-content-form">
-
-
-                                <form action="/Voiture/ListVoiture" method="post">
-                                    <div class="input-group">
-                                        <input name="TextRecherche" type="text" class="form-control form-search" aria-label="Text input with dropdown button">
-                                        <select name="RecherchePar" class="custom-select form-search">
-                                            <option value="0" selected>@ProjetASP.net.Resources.Shared._Layout.SearchBy : </option>
-                                            <option value="Nom">@ProjetASP.net.Resources.Shared._Layout.Name</option>
-                                            <option value="Marque">@ProjetASP.net.Resources.Shared._Layout.Marque</option>
-                                            <option value="Couleur">@ProjetASP.net.Resources.Shared._Layout.Color</option>
-                                            <option value="Annee">@ProjetASP.net.Resources.Shared._Layout.Year</option>
-                                            <option value="Km">@ProjetASP.net.Resources.Shared._Layout.KM</option>
-                                            <option value="Proprietaire">@ProjetASP.net.Resources.Shared._Layout.Prop    </option>
-                                        </select>
-                                        <div class="input-group-append">
-                                            <button class="btn form-search" type="submit">
-                                                <span class="Nan-icon">
-                                                    <i class="bi bi-search"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-
-                        </div>
 
                     </div>
                 </div>

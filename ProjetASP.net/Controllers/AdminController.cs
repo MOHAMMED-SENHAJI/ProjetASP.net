@@ -13,6 +13,7 @@ namespace ProjetASP.net.Controllers
 
         private bool checkAdmin()
         {
+            TempData["Connecter"] = "true";
             int id = Convert.ToInt32(Session["UserId"]);
 
             var admin = db.Users.Where(r => r.Id == id).FirstOrDefault();
@@ -23,6 +24,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Index()
         {
+            TempData["Connecter"] = "true";
             if (!checkAdmin())
                 return RedirectToAction("Index", "Home");
             int nbrAllUser = db.Users.Count();
@@ -41,6 +43,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Gestion_profil(int id = -1, string op = "")
         {
+            TempData["Connecter"] = "true";
             if (!checkAdmin())
                 return RedirectToAction("Index", "Home");
             if (id != -1 && !op.Equals(""))
@@ -70,6 +73,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult Gestion_Voiture()
         {
+            TempData["Connecter"] = "true";
             if (!checkAdmin())
                 return RedirectToAction("Index", "Home");
             var query = (from v in db.Voitures                         //
@@ -80,6 +84,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Delete(int VoitureId)
         {
+            TempData["Connecter"] = "true";
             var RES = (from res in db.Reservations
                        where res.Voiture.Equals(VoitureId)
                        select res).ToList();
@@ -94,6 +99,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Gestion_Resevation()
         {
+            TempData["Connecter"] = "true";
             var reservations = from r in db.Reservations
                                join voiture in db.Voitures on r.Voiture equals voiture.Id
 
@@ -105,6 +111,7 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult Gestion_message()
         {
+            TempData["Connecter"] = "true";
             if (!checkAdmin())
                 return RedirectToAction("Index", "Home");
             var msg = from m in db.Messages

@@ -97,6 +97,15 @@ namespace ProjetASP.net.Resources.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to se deconnecter.
+        /// </summary>
+        public static string Disconnect {
+            get {
+                return ResourceManager.GetString("Disconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Anglais.
         /// </summary>
         public static string English {
