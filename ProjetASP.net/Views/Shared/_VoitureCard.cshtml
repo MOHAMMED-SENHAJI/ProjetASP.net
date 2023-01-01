@@ -1,0 +1,35 @@
+﻿@model ProjetASP.net.Models.Voiture_info
+
+
+<div class="popular__container container swiper">
+    <div class="swiper-wrapper">
+        <article class="popular__card swiper-slide">
+            <div class="shapeX shape__smaller"></div>
+
+            <h1 class="popular__title">@Model.voiture.Nom</h1>
+            <h3 class="popular__subtitle">@Model.user.Name</h3>
+
+            <img src="url('../../Content/Images/Voiture/@Model.voiture.Image.Trim()" alt="" class="popular__img">
+
+            <div class="popular__data">
+                <div class="popular__data-group">
+                    <i class="ri-dashboard-2-line"></i> 3.7 sec
+                </div>
+                <div class="popular__data-group">
+                    <i class="ri-exchange-funds-line"></i> 356 Km/h
+                </div>
+                <div class="popular__data-group">
+                    <i class="ri-charging-pile-2-line"></i> Electric
+                </div>
+            </div>
+
+            <h3 class="popular__price">@Model.voiture.Prix dh</h3>
+            <button class="button popular__button">
+                <a href="~/Voiture/Index?VoitureId=@Model.voiture.Id" class="btn ">Voir plus  <i class="ri-shopping-bag-2-line"></i></a>
+            </button>
+
+
+        </article>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - @ProjetASP.net.Resources.Shared._Layout.TabTitle</title>
+
+
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" class="favicon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="~/Style/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="~/Style/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <div class="cursor"></div>
+    <header class="header">
+        <div class="container">
+            <nav class="nav container">
+                <i class="ri-steering-fill" style="font-size:60px"></i>
+                @Html.ActionLink("NextCar", "Index", "Home", new { area = "" }, new { @class = "navbar-brand pad" })
+
+                <div class="nav__menu" id="navbarNav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="~/Home/Index" class="nav__link active-link">@ProjetASP.net.Resources.Shared._Layout.Home</a>
+
+                        </li>
+                        <li class="nav__item">
+                            <a href="~/Voiture/ListVoiture" class="nav__link ">@ProjetASP.net.Resources.Shared._Layout.List </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="~/Home/Contact" class="nav__link "> @ProjetASP.net.Resources.Shared._Layout.Contact </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="~/Home/About" class="nav__link "> @ProjetASP.net.Resources.Shared._Layout.About </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link w3-left" style="cursor: pointer;" onclick="openRightMenu()">
+                                <span class="Nan-icon">
+                                    <i class="bi bi-box-arrow-in-left"> </i>
+                                </span>
+
+                                @ProjetASP.net.Resources.Shared._Layout.Connect
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Overlay -->
+            <div class="w3-overlay w3-animate-opacity" onclick="closeRightMenu()" style="cursor:pointer" id="myOverlay"></div>
+            <!-- menu -->
+            <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-right" style="display:none;right:0 ; top: 0; width: 350px ;z-index:5" id="rightMenu">
+                <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large"> &times;</button>
+                <br>
+                <h2 class="w3-bar-item">
+                    @ProjetASP.net.Resources.Shared._Layout.rightMenu
+                </h2>
+                <br>
+                <div style=" margin-left : 2rem; background: red">
+                    @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuLoc, "SignIn", "Login", new { role = "Locataire" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
+                    @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuProp, "SignIn", "Login", new { role = "Proprietaire" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
+                    @Html.ActionLink(ProjetASP.net.Resources.Shared._Layout.rightMenuAdmin, "SignIn", "Login", new { role = "Administrateur" }, htmlAttributes: new { @class = "w3-bar-item w3-button nav-link" })
+                </div>
+
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content"
+                         style="background-color: rgba(142, 35, 35, 0.00);
+                         border: none;
+                         margin: 5.5rem auto 1rem 4rem; !important; ">
+
+                        <div class="modal-body">
+                            <div class="Model-content-form">
+
+
+                                <form action="/Voiture/ListVoiture" method="post">
+                                    <div class="input-group">
+                                        <input name="TextRecherche" type="text" class="form-control form-search" aria-label="Text input with dropdown button">
+                                        <select name="RecherchePar" class="custom-select form-search">
+                                            <option value="0" selected>@ProjetASP.net.Resources.Shared._Layout.SearchBy : </option>
+                                            <option value="Nom">@ProjetASP.net.Resources.Shared._Layout.Name</option>
+                                            <option value="Marque">@ProjetASP.net.Resources.Shared._Layout.Marque</option>
+                                            <option value="Couleur">@ProjetASP.net.Resources.Shared._Layout.Color</option>
+                                            <option value="Annee">@ProjetASP.net.Resources.Shared._Layout.Year</option>
+                                            <option value="Km">@ProjetASP.net.Resources.Shared._Layout.KM</option>
+                                            <option value="Proprietaire">@ProjetASP.net.Resources.Shared._Layout.Prop    </option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn form-search" type="submit">
+                                                <span class="Nan-icon">
+                                                    <i class="bi bi-search"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <div>
+        @RenderBody()
+
+        <footer>
+            <div class="footer__container">
+                <section class="logos section">
+                    <div class="logos__container container grid">
+                        <div class="logos__content">
+                            <img src="~/Style/Images/logo1.png" alt="" class="logos__img">
+                        </div>
+                        <div class="logos__content">
+                            <img src="~/Style/Images/logo2.png" alt="" class="logos__img">
+                        </div>
+                        <div class="logos__content">
+                            <img src="~/Style/Images/logo4.png" alt="" class="logos__img">
+                        </div>
+                        <div class="logos__content">
+                            <img src="~/Style/Images/logo6.png" alt="" class="logos__img">
+                        </div>
+                        <div class="logos__content">
+                            <img src="~/Style/Images/logo5.png" alt="" class="logos__img">
+                        </div>
+                        <div class="logos__content">
+                            <img src="~/Style/Images/logo3.png" alt="" class="logos__img">
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+            <div class="footer__title">
+                @ProjetASP.net.Resources.Shared._Layout.footerMsg - @DateTime.Now.Year -
+                <span class="languages" style="padding-left:20%">
+                    <strong>
+                        <a href="@Url.Action("Change","Language",new { LanguageAbreviation = "fr" })" style="color:#8e9aaf">@ProjetASP.net.Resources.Shared._Layout.French</a>&nbsp; &nbsp;
+                        <a href="@Url.Action("Change","Language",new { LanguageAbreviation = "en" })" style="color:#8e9aaf">@ProjetASP.net.Resources.Shared._Layout.English</a>
+                    </strong>
+                </span>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/CustomJS")
+    @RenderSection("scripts", required: false)
+    <script type="application/javascript">
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $('.custom-file-label').html(fileName);
+        });
+    </script>
+</body>
+</html>
