@@ -114,8 +114,15 @@ namespace ProjetASP.net.Controllers
                 Marque = marque,
 
             };
-
-            if (offre.Equals("true")) v.Offre = 1;
+            try
+            {
+                image.SaveAs(Server.MapPath("~") + "/Content/Images/Voiture/" + image.FileName);
+            }
+            catch (UnauthorizedAccessException)
+            { 
+            
+            }
+                if (offre.Equals("true")) v.Offre = 1;
             else v.Offre = 0;
             db.Voitures.InsertOnSubmit(v);
             db.SubmitChanges();
