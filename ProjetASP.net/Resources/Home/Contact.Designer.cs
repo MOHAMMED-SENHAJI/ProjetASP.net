@@ -59,5 +59,32 @@ namespace ProjetASP.net.Resources.Home {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nous sommes ici pour vous aider..
+        /// </summary>
+        public static string statement {
+            get {
+                return ResourceManager.GetString("statement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Envoyer.
+        /// </summary>
+        public static string submitB {
+            get {
+                return ResourceManager.GetString("submitB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contactez-Nous.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
     }
 }
