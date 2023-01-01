@@ -47,6 +47,7 @@ namespace ProjetASP.net.Controllers
             }
             else
             {
+                TempData["Connecter"] = "false";
                 ViewBag.role = role;
                 ViewBag.error = "Incorrect input !";
                 return View("SignIn");
@@ -55,6 +56,7 @@ namespace ProjetASP.net.Controllers
 
         public ActionResult SignUp(string role)
         {
+            TempData["Connecter"] = "false";
             ViewBag.role = role;
             return View();
         }
@@ -62,6 +64,7 @@ namespace ProjetASP.net.Controllers
         [HttpPost]
         public ActionResult SignUp(string nom, string email, string password, String adresse, string telephone, string role, string status)
         {
+            TempData["Connecter"] = "false";
             var query = (from u in db.Users
                          where u.Email.Equals(email)
                          select u).FirstOrDefault();
@@ -84,6 +87,7 @@ namespace ProjetASP.net.Controllers
             }
             else
             {
+                TempData["Connecter"] = "false";
                 ViewBag.role = role;
                 ViewBag.error = "Email already in use";
                 return View("SignUp");
@@ -91,21 +95,25 @@ namespace ProjetASP.net.Controllers
         }
         public ActionResult RegisterAgency(string nomAgence, string email, string password, string adresse, string telephone, string role)
         {
+            TempData["Connecter"] = "false";
             return SignUp(nomAgence, email, password, adresse, telephone, role, "Agence");
         }
 
         public ActionResult RegisterPrivate(string nom, string email, string password, string adresse, string telephone, string role)
         {
+            TempData["Connecter"] = "false";
             return SignUp(nom, email, password, adresse, telephone, role, "Particulier");
         }
 
         public ActionResult RegisterLocataire(string nom, string email, string password, string telephone, string role)
         {
+            TempData["Connecter"] = "false";
             return SignUp(nom, email, password, null, telephone, role, null);
         }
 
         public ActionResult Logout()
         {
+            TempData["Connecter"] = "false";
             Session["UserId"] = null;
             string r = Session["UserRole"].ToString();
             Session["UserRole"] = null;

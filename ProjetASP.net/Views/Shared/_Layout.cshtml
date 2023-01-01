@@ -53,7 +53,7 @@
                         @{
                             var temp = @TempData["connecter"];
                         }
-                        @if ((string)temp != "true")
+                        @if ((string)temp == "false")
                         {
                             <li class="nav__item">
                                 <a class="nav__link w3-left" style="cursor: pointer;" onclick="openRightMenu()">
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                         }
-                        @if ((string)temp != "false")
+                        @if ((string)temp == "true")
                         {
                             <li class="nav__item">
                                 <a href="~/Login/Logout" class="nav__link w3-left Nan-icon ">
