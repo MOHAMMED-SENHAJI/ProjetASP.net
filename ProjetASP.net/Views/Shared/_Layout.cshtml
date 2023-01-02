@@ -70,12 +70,6 @@
                         }
                         @if ((string)temp == "true")
                         {
-                            <li class="nav__item">
-                                <a href="~/Login/Logout" class="nav__link w3-left Nan-icon ">
-                                    <i class="bi bi-door-closed"></i>  @ProjetASP.net.Resources.Shared._Layout.Disconnect
-                                </a>
-                            </li>
-
                             if ((string)Session["UserRole"] == "Administrateur")
                             {
                                 act = "Index";
@@ -94,8 +88,15 @@
                             <li class="nav__item">
                                 <i class="bi bi-person-circle"></i>
                                 @Html.ActionLink(@ProjetASP.net.Resources.Shared._Layout.Profil, act, cont, new { area = "" }, new { @class = "nav__link" })
-                                
+
                             </li>
+                            <li class="nav__item">
+                                <a href="~/Login/Logout" class="nav__link w3-left Nan-icon ">
+                                    <i class="bi bi-door-closed"></i>  @ProjetASP.net.Resources.Shared._Layout.Disconnect
+                                </a>
+                            </li>
+
+
                         }
 
                     </ul>

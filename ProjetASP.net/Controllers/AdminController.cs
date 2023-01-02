@@ -1,9 +1,12 @@
-﻿using ProjetASP.net.Models;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using Newtonsoft.Json;
+using ProjetASP.net.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataPoint = ProjetASP.net.Models.DataPoint;
 
 namespace ProjetASP.net.Controllers
 {
@@ -31,13 +34,35 @@ namespace ProjetASP.net.Controllers
             int nbrPropUser = db.Users.Where(r => r.Role.Contains("Proprietaire")).Count();
             int nbrLocataireUser = db.Users.Where(r => r.Role.Contains("Locataire")).Count();
             int nbrReservation = db.Reservations.Count();
-            var ListReservatoin = db.Reservations.GroupBy(r => r.DateDebut.Value.Date);
+            var ListReservation = db.Reservations.GroupBy(r => r.DateDebut.Value.Month).Select(g => new { r = g.Key, count = g.Count() });
 
             ViewBag.nbrAllUser = nbrAllUser;
             ViewBag.nbrPropUser = nbrPropUser;
             ViewBag.nbrLocataireUser = nbrLocataireUser;
             ViewBag.nbrReservation = nbrReservation;
-            ViewBag.ListReservatoin = ListReservatoin;
+
+            Dictionary<int, int> monthsCount = new Dictionary<int, int>();
+            foreach (var item in ListReservation)
+            {
+                monthsCount.Add(item.r, item.count);
+            }
+
+            List<DataPoint> dataPoints = new List<DataPoint>();
+            dataPoints.Add(new DataPoint("Jan", !monthsCount.ContainsKey(1) ? 0 : monthsCount[1]));
+            dataPoints.Add(new DataPoint("Feb", !monthsCount.ContainsKey(2) ? 0 : monthsCount[2]));
+            dataPoints.Add(new DataPoint("Mar", !monthsCount.ContainsKey(3) ? 0 : monthsCount[3]));
+            dataPoints.Add(new DataPoint("Apr", !monthsCount.ContainsKey(4) ? 0 : monthsCount[4]));
+            dataPoints.Add(new DataPoint("Mai", !monthsCount.ContainsKey(5) ? 0 : monthsCount[5]));
+            dataPoints.Add(new DataPoint("Jui", !monthsCount.ContainsKey(6) ? 0 : monthsCount[6]));
+            dataPoints.Add(new DataPoint("Juil", !monthsCount.ContainsKey(7) ? 0 : monthsCount[7]));
+            dataPoints.Add(new DataPoint("Aou", !monthsCount.ContainsKey(8) ? 0 : monthsCount[8]));
+            dataPoints.Add(new DataPoint("Sep", !monthsCount.ContainsKey(9) ? 0 : monthsCount[9]));
+            dataPoints.Add(new DataPoint("Oct", !monthsCount.ContainsKey(10) ? 0 : monthsCount[10]));
+            dataPoints.Add(new DataPoint("Nov", !monthsCount.ContainsKey(11) ? 0 : monthsCount[11]));
+            dataPoints.Add(new DataPoint("Dec", !monthsCount.ContainsKey(12) ? 0 : monthsCount[12]));
+
+
+            ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
 
             return View();
         }

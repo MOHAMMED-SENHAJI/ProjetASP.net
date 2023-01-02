@@ -109,6 +109,15 @@ img {
     overflow: hidden;
 }
 
+.clrsgn {
+    background: dodgerblue !important;
+    width: fit-content !important;
+}
+
+.clrcr {
+    color: dodgerblue !important;
+}
+
 /* ======== Shape X Design ======*/
 
 .shapeX {

@@ -24,9 +24,13 @@
             </div>
 
             <h3 class="popular__price">@Model.voiture.Prix dh</h3>
-            <button class="button popular__button">
-                <a href="~/Voiture/Index?VoitureId=@Model.voiture.Id" class="btn "><i class="ri-shopping-bag-2-line"></i></a>
-            </button>
+            @if ((string)Session["UserRole"] == "Locataire")
+            {
+                <button class="button popular__button">
+                    <a href="~/Voiture/Index?VoitureId=@Model.voiture.Id" class="btn "><i class="ri-shopping-bag-2-line"></i></a>
+                </button>
+            }
+
 
 
         </article>

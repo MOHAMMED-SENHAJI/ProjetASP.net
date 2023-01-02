@@ -21,10 +21,10 @@
                             <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
                             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                             <input type="hidden" name="role" value="@ViewBag.role" />
-                            <button class="btn  " type="submit">Sign in</button>
+                            <button class="btn clrsgn " type="submit">Sign in</button>
                             @if (@ViewBag.role != "Administrateur")
                             {
-                                <p>Vous n'avez pas de compte @ViewBag.role ? @Html.ActionLink("créer compte", "SignUp", "Login", new { role = ViewBag.role }, htmlAttributes: new { @class = "btn-link" })</p>
+                                <p>Vous n'avez pas de compte @ViewBag.role ? @Html.ActionLink("créer compte", "SignUp", "Login", new { role = ViewBag.role }, htmlAttributes: new { @class = "btn-link clrcr" })</p>
                             }
                            
                         </form>

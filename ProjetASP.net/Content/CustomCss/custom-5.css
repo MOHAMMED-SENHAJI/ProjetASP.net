@@ -24,13 +24,17 @@
 
 .connectSideBar {
     /*  background: linear-gradient(0deg, rgba(147,66,179,1) 0%, rgba(25,2,34,1) 100%) trans!important;*/
-
-    background: rgb(56,29,66) !important;
     background: linear-gradient(0deg, rgba(56,29,66,0.5) 0%, rgba(25,2,34,0.5) 100%) !important;
     top: 120px !important;
     right: 0px !important;
     height: 330px !important;
-    border-radius:15px 0px 0px 15px;
-    width:320px !important;
+    border-radius: 15px 0px 0px 15px;
+    width: 320px !important;
 }
 
+.connectSideBar2 {
+    /*  background: linear-gradient(0deg, rgba(147,66,179,1) 0%, rgba(25,2,34,1) 100%) trans!important;*/
+    background: linear-gradient(304deg, rgba(55,35,66,2.5) 48%, rgba(6,13,67,18.5) 65%) !important;
+    top: 120px !important;
+    border-radius: 15px 15px 15px 15px;
+}

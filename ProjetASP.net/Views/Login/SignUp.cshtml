@@ -20,14 +20,14 @@
                     <div class="col-md-7">
                         @if (ViewBag.role == "Proprietaire")
                         {
-                            <button type="button" class="btn" data-toggle="modal" data-target="#agence">Agence</button>
-                            <button type="button" class="btn btn-2" data-toggle="modal" data-target="#particulier">Particulier</button>
-                            <br /><br /><p>Vous avez un compte ? <a href="@Url.Action("SignIn", "Login",new { role = ViewBag.role })">Connexion</a></p>
+                            <button type="button" class="btn clrsgn" data-toggle="modal" data-target="#agence">Agence</button>
+                            <button type="button" class="btn btn-2 clrsgn" data-toggle="modal" data-target="#particulier">Particulier</button>
+                            <br /><br /><p>Vous avez un compte ? <a href="@Url.Action("SignIn", "Login",new { role = ViewBag.role })" class="clrcr">Connexion</a></p>
                             <div class="modal fade" id="agence" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
+                                <div class="modal-dialog " role="document">
+                                    <div class="modal-content connectSideBar2">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" style="color : #922b21">Agence</h4>
+                                            <h4 class="modal-title clrcr" style="color : #922b21">Agence</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -40,17 +40,17 @@
                                                 <input type="text" name="adresse" class="form-control" placeholder="Adresse de récupération" required />
                                                 <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" pattern="0[6|5][0-9]{8}" required />
                                                 <input type="hidden" name="role" value="@ViewBag.role" />
-                                                <button class="btn " type="submit">Sign Up</button>
+                                                <button class="btn clrsgn" type="submit">Sign Up</button>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal fade" id="particulier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
+                                <div class="modal-dialog " role="document">
+                                    <div class="modal-content connectSideBar2">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" style="color : #922b21">Particulier</h4>
+                                            <h4 class="modal-title clrcr" style="color : #922b21">Particulier</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -63,7 +63,7 @@
                                                 <input type="text" name="adresse" class="form-control" placeholder="Adresse de récupération" required />
                                                 <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" pattern="0[6|5][0-9]{8}" required />
                                                 <input type="hidden" name="role" value="@ViewBag.role" />
-                                                <button class="btn " type="submit">Sign Up</button>
+                                                <button class="btn clrsgn" type="submit">Sign Up</button>
                                             </form>
                                         </div>
                                     </div>
@@ -78,9 +78,9 @@
                             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                             <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" pattern="0[6|5][0-9]{8}" required />
                             <input type="hidden" name="role" value="@ViewBag.role" />
-                            <button class="btn " type="submit">Sign Up</button>
+                            <button class="btn clrsgn" type="submit">Sign Up</button>
                         </form>
-                            <br /><br /><p>Vous avez un compte ? <a href="@Url.Action("SignIn", "Login",new { role = ViewBag.role })">Connexion</a></p>
+                            <br /><br /><p>Vous avez un compte ? <a href="@Url.Action("SignIn", "Login",new { role = ViewBag.role })" class="clrcr">Connexion</a></p>
                         }
                     </div>
                 </div>
