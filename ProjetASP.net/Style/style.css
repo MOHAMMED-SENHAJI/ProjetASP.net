@@ -112,11 +112,13 @@ img {
 .clrsgn {
     background: dodgerblue !important;
     width: fit-content !important;
+    color: white !important;
 }
 
 .clrcr {
     color: dodgerblue !important;
 }
+
 
 /* ======== Shape X Design ======*/
 

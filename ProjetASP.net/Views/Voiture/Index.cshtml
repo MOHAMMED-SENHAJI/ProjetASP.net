@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-6 voiture-content">
                 <h2>  @info.voiture.Marque @info.voiture.Nom </h2>
-                <h3> @info.voiture.Prix <small>dhs/jour</small></h3>
+                <h3 style="color:dodgerblue !important"> @info.voiture.Prix <small>dhs/jour</small></h3>
                 <hr />
                 <div class="voiture-caracter">
                     <p><span>la couleur :</span>  @info.voiture.Couleur  </p>
@@ -29,8 +29,8 @@
                     <p><span>propriétaire  : </span> @info.user.Name  </p>
                 </div>            
                     <div class="btns">
-                        <a href="~/Voiture/Reserver?id=@info.voiture.Id" class="btn btn-reservation">Réserver la voiture</a>
-                        <a href="~/Proprietaire/Proprietaire_Page?id=@info.voiture.Proprietaire" class="btn btn-proprietaire">Voire le propriétaire</a>
+                        <a href="~/Voiture/Reserver?id=@info.voiture.Id" class="btn clrsgn">Réserver la voiture</a>
+                        <a href="~/Proprietaire/Proprietaire_Page?id=@info.voiture.Proprietaire" class="btn" style="background: hsl(217deg 19% 13%) !important; color: white !important">Voire le propriétaire</a>
                     </div>
                 
             </div>

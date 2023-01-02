@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="~/Style/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
 
 </head>
 <body>
@@ -86,12 +87,12 @@
                                 cont = "User";
                             }
                             <li class="nav__item">
-                                <i class="bi bi-person-circle"></i>
+                                <i class="bi bi-person-circle ic"></i>
                                 @Html.ActionLink(@ProjetASP.net.Resources.Shared._Layout.Profil, act, cont, new { area = "" }, new { @class = "nav__link" })
 
                             </li>
                             <li class="nav__item">
-                                <a href="~/Login/Logout" class="nav__link w3-left Nan-icon ">
+                                <a href="~/Login/Logout" class="nav__link w3-left ic Nan-icon ">
                                     <i class="bi bi-door-closed"></i>  @ProjetASP.net.Resources.Shared._Layout.Disconnect
                                 </a>
                             </li>
@@ -137,8 +138,6 @@
 
     </header>
 
-
-
     <div>
         @RenderBody()
 
@@ -181,7 +180,6 @@
 
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/CustomJS")
@@ -192,5 +190,6 @@
             $('.custom-file-label').html(fileName);
         });
     </script>
+
 </body>
 </html>

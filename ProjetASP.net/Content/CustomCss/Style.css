@@ -44,7 +44,7 @@
 }
 
 .card-item label, p {
-    color: #818181;
+    color: white;
 }
 
 .card-item table th {
@@ -55,6 +55,11 @@
     color: #818181;
 }
 
+.ic::before {
+    margin-bottom: 4px;
+    margin-left: 40px;
+    padding-right: 10px;
+}
 /**********************************************/
 
 

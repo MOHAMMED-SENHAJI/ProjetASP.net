@@ -19,7 +19,6 @@
 }
 
     .ListProprietaire .card-body .btn:hover {
-
         margin: auto 13%;
         font-weight: 700;
     }
@@ -41,7 +40,6 @@
     min-height: 90vh;
     color: #fff;
     padding: 0;
-    
 }
 
     .menu h2 {
@@ -106,7 +104,7 @@
     .Account_info h2 {
         font-size: 2.5rem;
         padding-bottom: 2rem;
-        border-bottom: 3px solid #641e16;
+        border-bottom: 3px solid #1e90ff;
         margin-bottom: 5rem;
     }
 
@@ -209,7 +207,8 @@ label::after {
     .about .bg-img {
         height: 500px;
         width: 90%;
-        background: url('../../Style/Images/logo_background.png') no-repeat center; background-size: contain;
+        background: url('../../Style/Images/logo_background.png') no-repeat center;
+        background-size: contain;
     }
 
     .about .content {
@@ -283,7 +282,7 @@ label::after {
     color: #ffffff;
     margin-top: 30px;
     padding: 0.8rem 4rem;
-    background: #23549c !important
+    background: #23549c
 }
 
     .content .btn:hover {
@@ -332,7 +331,7 @@ label::after {
     .ListVoiture .banner {
         height: 500px;
         width: 100%;
-        background: url('~/Style/Images/about.png') no-repeat bottom rgba(0, 0, 0, 0.5);
+        background: url('../../Style/Images/lis.jpg') no-repeat bottom rgba(0, 0, 0, 0.5);
         background-size: cover;
         background-blend-mode: multiply;
         background-attachment: fixed;
@@ -365,6 +364,6 @@ label::after {
                 }
 
 
-.table-responsive td{
-    color:white !important;
+.table-responsive td {
+    color: white !important;
 }

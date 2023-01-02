@@ -21,11 +21,15 @@
     <div class="card-item" style="width: 70%;">
         <div class="row row-space">
             <div class="col-md-12">
-
+                <div class="row row-space">
+                    <div class="col-lg-12">
+                        <h1>Reservation</h1>
+                    </div>
+                </div>
                 <div class="row row-space">
                     <div class="col-lg-3">
                         <div class="reserv-Item-img"
-                             style="width: 100%; height: 120px; border-radius: 1rem ; width : 236px; height: 250px; background: url('../../Content/Images/Voiture/@v.Image.Trim()') center no-repeat; background-size: cover; ">
+                             style="width: 100%; height: 120px; border-radius: 1rem ; width : 330px; height: 250px; background: url('../../Content/Images/Voiture/@v.Image.Trim()') center no-repeat; background-size: cover; ">
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -34,43 +38,39 @@
                         <p style="position:relative;left:80px">@v.Prix <small>dhs/jour</small></p>
                     </div>
                 </div>
-                <div class="row row-space">
-                    <div class="col-lg-12">
-                        <h1>Reservation</h1>
-                    </div>
-                </div>
+
                 <div class="row row-space">
                     <div class="col-lg-12">
                         <form method="post" action=@Url.Action("Reserver","Voiture")>
-                            <div >
+                            <div>
 
                                 <div class="col-lg-6">
                                     <label for="Name" style="font-size:20px ; font-weight:bold ; color:white">Votre Nom  </label>
-                                    <input type="text" name="nom" class="form-control vh " value="@u.Name"  style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color:white" />
+                                    <input type="text" name="nom" class="form-control vh " value="@u.Name" style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color:white" />
 
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="Price"  style="font-size:20px ; font-weight:bold ; color:white">Email </label>
-                                    <input type="email" name="email" class="form-control" value="@u.Email"  style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
+                                    <label for="Price" style="font-size:20px ; font-weight:bold ; color:white">Email </label>
+                                    <input type="email" name="email" class="form-control" value="@u.Email" style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
 
                                 </div>
 
                             </div>
-                            <div >
+                            <div>
 
                                 <div class="col-lg-6">
-                                    <label for="Name "style="font-size:20px ; font-weight:bold ; color:white">Phone  </label>
-                                    <input type="text" name="phone" class="form-control" value=" @u.Phone "  style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white "/>
+                                    <label for="Name " style="font-size:20px ; font-weight:bold ; color:white">Phone  </label>
+                                    <input type="text" name="phone" class="form-control" value=" @u.Phone " style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
 
                                 </div>
                                 <div class="col-lg-6">
                                     <label style="font-size:20px ; font-weight:bold ; color:white">Addresse </label>
-                                    <input type="text" name="addresse" class="form-control" value="@u.Address "  style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
+                                    <input type="text" name="addresse" class="form-control" value="@u.Address " style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
 
                                 </div>
 
                             </div>
-                            <div >
+                            <div>
 
                                 <div class="col-lg-6">
                                     <label for="Price" style="font-size:20px ; font-weight:bold ; color:white">Price (dhs) </label>
@@ -84,12 +84,12 @@
                                     <input type="number" name="jours" class="form-control " style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
                                 </div>
                             </div>
-                            <div >
+                            <div>
                                 <div class="col-lg-6">
 
                                     <label for="Name" style="font-size:20px ; font-weight:bold ; color:white">Date de resevation  </label>
                                     <div>
-                                        <input name="date" type="date" class="form-control"  style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white "/>
+                                        <input name="date" type="date" class="form-control" style="width: 800px; height: 50px; margin-bottom: 30px; background-color: #3d1b69; color: white " />
                                     </div>
 
                                 </div>
@@ -101,7 +101,7 @@
                             </div>
                             <div>
                                 <div class="col-lg-12">
-                                    <button type="submit" class="btn btn-red" style="margin-top:20px" >Submit</button>
+                                    <button type="submit" class="btn btn-red" style="margin-top:20px">Submit</button>
                                 </div>
                             </div>
                         </form>

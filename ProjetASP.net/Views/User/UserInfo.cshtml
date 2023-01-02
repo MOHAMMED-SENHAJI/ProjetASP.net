@@ -23,14 +23,14 @@
             <p>@user.Email </p>
         </div>
         <div class="col-md-12">
-            <button type="button" class="btn  btn-red" data-toggle="modal" data-target="#modalUpdate">
+            <button type="button" class="btn clrsgn" data-toggle="modal" data-target="#modalUpdate">
                 Update info
             </button>
 
             <!-- Modal -->
             <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="modalUpdate" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content connectSideBar2">
                         <form method="post" action=@Url.Action("UpdateUserInfo","User")>
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Update Account </h5>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-red">Update</button>
+                                <button type="submit" class="btn clrsgn">Update</button>
                             </div>
                         </form>
                     </div>
