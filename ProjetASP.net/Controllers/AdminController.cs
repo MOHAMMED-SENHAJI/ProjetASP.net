@@ -31,13 +31,13 @@ namespace ProjetASP.net.Controllers
             if (!checkAdmin())
                 return RedirectToAction("Index", "Home");
             int nbrAllUser = db.Users.Count();
-            int nbrPropUser = db.Users.Where(r => r.Role.Contains("Proprietaire")).Count();
+            int nbrPropAgence = db.Users.Where(r => r.Role.Contains("Proprietaire")).Where(r => r.Status.Contains("Agence")).Count();
+            int nbrPropParticulier = db.Users.Where(r => r.Role.Contains("Proprietaire")).Where(r => r.Status.Contains("Particulier")).Count();
             int nbrLocataireUser = db.Users.Where(r => r.Role.Contains("Locataire")).Count();
             int nbrReservation = db.Reservations.Count();
             var ListReservation = db.Reservations.GroupBy(r => r.DateDebut.Value.Month).Select(g => new { r = g.Key, count = g.Count() });
 
             ViewBag.nbrAllUser = nbrAllUser;
-            ViewBag.nbrPropUser = nbrPropUser;
             ViewBag.nbrLocataireUser = nbrLocataireUser;
             ViewBag.nbrReservation = nbrReservation;
 
@@ -61,8 +61,14 @@ namespace ProjetASP.net.Controllers
             dataPoints.Add(new DataPoint("Nov", !monthsCount.ContainsKey(11) ? 0 : monthsCount[11]));
             dataPoints.Add(new DataPoint("Dec", !monthsCount.ContainsKey(12) ? 0 : monthsCount[12]));
 
+            List<DataPoint> dataPoints2 = new List<DataPoint>();
+            dataPoints2.Add(new DataPoint("Propriétaire_Particulier", nbrPropParticulier));
+            dataPoints2.Add(new DataPoint("Propriétaire_Agence", nbrPropAgence));
+            dataPoints2.Add(new DataPoint("Locataire", nbrLocataireUser));
 
-            ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
+
+            ViewBag.DataPoints1 = JsonConvert.SerializeObject(dataPoints);
+            ViewBag.DataPoints2 = JsonConvert.SerializeObject(dataPoints2);
 
             return View();
         }

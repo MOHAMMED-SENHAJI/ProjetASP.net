@@ -4,125 +4,75 @@
     Layout = "~/Views/Shared/_dashboardAdmin.cshtml";
 }
 
-
 <div class="container Account_info">
 
-
-
-
-
-    <script>
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	exportEnabled: true,
-	animationEnabled: true,
-	title: {
-		text: "Automotive Semiconductor Vendors 2015",
-		fontSize: 21
-	},
-	data: [{
-		type: "pie",
-		startAngle: 160,
-		toolTipContent: "<b>{label}</b>: {y}%",
-		indexLabel: "{label} - {y}%",
-		dataPoints: ViewBag.nbrPropUser
-	}]
-});
-chart.render();
-
-}
-    </script>
-
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-
-
-
+    <div id="chartContainer" style="height: 370px; width: 100%; border-radius:20px;"></div>
+    <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
 
     <div class="row">
         <div class="col-7">
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
             <script type="text/javascript">
-                google.charts.load("current", { packages: ["corechart"] });
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                        ['Le Role', 'Number of users'],
-                        ['Proprietaire', @ViewBag.nbrPropUser],
-                        ['Locataire', @ViewBag.nbrLocataireUser],
-
-                    ]);
-
-                    var options = {
-                        title: 'Number of users',
-                        pieHole: 0.2,
-                        pieSliceTextStyle: {
-                            color: 'black',
-                        },
-
-                    };
-
-                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-                    chart.draw(data, options);
-                }
-            </script>
-            <div id="donutchart" class="stat-card" style=" height: 400px; width: 100%"></div>
-
-
-            <div class="row">
-                <div class="col-7">
-                    <div id="chartContainer" class="stat-card" style="height: 370px; width: 100%;"></div>
-                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                    <script type="text/javascript">
                 window.onload = function () {
 
-                var chart = new CanvasJS.Chart("chartContainer", {
+                var chart1 = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
                 theme: "dark2", // "light1", "light2", "dark1", "dark2"
-                title: {
-	                text: "Liste des réservations"
+                    title: {
+                        text: "Reservations" + @ViewBag.nbrReservation,
+
                 },
                 subtitles: [{
-	                text: "",
-	                fontSize: 18
+                    text: "Nombre Total" + @ViewBag.nbrReservation,
+                    fontSize: 16,                  
                 }],
                 axisY: {
-	                title: "Nombre des réservatons",
-	                logarithmic: false
+                    title: "Nombre des réservatons",
+                    logarithmic: false
                 },
                 data: [{
-	                type: "column",
-	                indexLabelFontColor: "white",
-	                indexLabel: "{y}",
-	                indexLabelFontSize: 16,
-	                yValueFormatString: "#,##0.#",
-	                toolTipContent: "<b>{label}: {y}</b> réservations",
-	                dataPoints:  @Html.Raw(ViewBag.DataPoints)
+                    type: "column",
+                    indexLabelFontColor: "white",
+                    indexLabel: "{y}",
+                    indexLabelFontSize: 16,
+                    yValueFormatString: "#,##0.#",
+                    toolTipContent: "<b>{label}: {y}</b> réservations",
+                    dataPoints:  @Html.Raw(ViewBag.DataPoints1)
                 }]
                 });
-                chart.render();
-
-                }
-                    </script>
-
-
-                </div>
-                <br />
-                <br />
 
 
 
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+    title: {
+        text:"Partition des utilisateurs",
+		fontSize: 21
+    },
+    subtitles: [{
+        text:"Nombre total: " + @ViewBag.nbrAllUser,
+		fontSize: 16
+        }],
+	data: [{
+		type: "pie",
+		startAngle: 160,
+		toolTipContent: "<b>{label}</b>: {y}",
+		indexLabel: "{label} - {y}",
+		dataPoints: @Html.Raw(ViewBag.DataPoints2)
+	}]
+});
+chart1.render();
+chart2.render();
 
-                <br />
-                <br />
+}
 
-
-     
-
-            </div>
+            </script>
         </div>
     </div>
 </div>
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
